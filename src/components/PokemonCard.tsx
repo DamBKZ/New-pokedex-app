@@ -1,19 +1,9 @@
 import React from "react";
 
-const pokemonList = [
-	{
-		name: "bulbasaur",
-		imgSrc:
-			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-	},
-	{
-		name: "mew",
-	},
-];
-
-const PokemonCard: React.FC = () => {
-	const pokemon = pokemonList[1];
-
+// Composant PokemonCard avec déstructuration des props
+const PokemonCard: React.FC<{
+	pokemon: { name: string; imgSrc: string | null };
+}> = ({ pokemon }) => {
 	return (
 		<figure>
 			{pokemon.imgSrc ? (

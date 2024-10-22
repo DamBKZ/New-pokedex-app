@@ -1,9 +1,13 @@
 import React from "react";
 
-// Composant PokemonCard avec déstructuration des props
-const PokemonCard: React.FC<{
-	pokemon: { name: string; imgSrc: string | null };
-}> = ({ pokemon }) => {
+interface PokemonProps {
+	pokemon: {
+		name: string;
+		imgSrc?: string | null;
+	};
+}
+
+const PokemonCard: React.FC<PokemonProps> = ({ pokemon }) => {
 	return (
 		<figure>
 			{pokemon.imgSrc ? (

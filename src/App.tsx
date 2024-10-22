@@ -16,7 +16,6 @@ const pokemonList = [
 const App: React.FC = () => {
 	return (
 		<div>
-			{/* Passe un Pokémon en tant que prop */}
 			<PokemonCard pokemon={pokemonList[0]} />
 		</div>
 	);

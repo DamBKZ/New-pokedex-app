@@ -7,27 +7,20 @@ type NavBarProps = {
 };
 
 function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
-	const handlePrev = () => {
-		setPokemonIndex(pokemonIndex - 1);
-	};
-
-	const handleNext = () => {
-		setPokemonIndex(pokemonIndex + 1);
-	};
-
 	return (
 		<div>
-			{pokemonIndex > 0 && (
-				<button type="button" onClick={handlePrev}>
-					Précédent
+			{pokemonList.map((pokemon, index) => (
+				<button
+					key={pokemon.name} // Utilisation de `name` comme clé unique
+					type="button"
+					onClick={() => setPokemonIndex(index)} // Met à jour l'index du Pokémon
+					style={{
+						fontWeight: pokemonIndex === index ? "bold" : "normal", // Met en gras le bouton du Pokémon sélectionné
+					}}
+				>
+					{pokemon.name}
 				</button>
-			)}
-
-			{pokemonIndex < pokemonList.length - 1 && (
-				<button type="button" onClick={handleNext}>
-					Suivant
-				</button>
-			)}
+			))}
 		</div>
 	);
 }

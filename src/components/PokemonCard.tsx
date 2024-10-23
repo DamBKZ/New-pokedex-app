@@ -1,11 +1,11 @@
 import React from "react";
 
-interface PokemonProps {
+type PokemonProps = {
 	pokemon: {
 		name: string;
 		imgSrc?: string | null;
 	};
-}
+};
 
 const PokemonCard: React.FC<PokemonProps> = ({ pokemon }) => {
 	return (

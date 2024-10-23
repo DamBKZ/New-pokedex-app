@@ -1,8 +1,7 @@
+import { Pokemon } from "../types/types";
+
 type PokemonProps = {
-	pokemon: {
-		name: string;
-		imgSrc?: string;
-	};
+	pokemon: Pokemon;
 };
 
 function PokemonCard({ pokemon }: PokemonProps) {

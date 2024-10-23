@@ -1,13 +1,11 @@
-import React from "react";
-
 type PokemonProps = {
 	pokemon: {
 		name: string;
-		imgSrc?: string | null;
+		imgSrc?: string;
 	};
 };
 
-const PokemonCard: React.FC<PokemonProps> = ({ pokemon }) => {
+function PokemonCard({ pokemon }: PokemonProps) {
 	return (
 		<figure>
 			{pokemon.imgSrc ? (
@@ -18,6 +16,6 @@ const PokemonCard: React.FC<PokemonProps> = ({ pokemon }) => {
 			<figcaption>{pokemon.name}</figcaption>
 		</figure>
 	);
-};
+}
 
 export default PokemonCard;

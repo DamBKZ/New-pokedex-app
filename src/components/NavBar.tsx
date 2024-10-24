@@ -11,11 +11,16 @@ function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
 		<div>
 			{pokemonList.map((pokemon, index) => (
 				<button
-					key={pokemon.name} // Utilisation de `name` comme clé unique
+					key={pokemon.name}
 					type="button"
-					onClick={() => setPokemonIndex(index)} // Met à jour l'index du Pokémon
+					onClick={() => {
+						setPokemonIndex(index);
+						if (pokemon.name === "pikachu") {
+							alert("pika pikachu !!!");
+						}
+					}}
 					style={{
-						fontWeight: pokemonIndex === index ? "bold" : "normal", // Met en gras le bouton du Pokémon sélectionné
+						fontWeight: pokemonIndex === index ? "bold" : "normal",
 					}}
 				>
 					{pokemon.name}
